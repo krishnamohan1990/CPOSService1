@@ -1,0 +1,10 @@
+D:\KM\CPOS\CPOSService\CPOSLibrary\bin\Debug\CPOSLibrary.dll.config
+D:\KM\CPOS\CPOSService\CPOSLibrary\bin\Debug\CPOSLibrary.dll
+D:\KM\CPOS\CPOSService\CPOSLibrary\bin\Debug\CPOSLibrary.pdb
+D:\KM\CPOS\CPOSService\CPOSLibrary\bin\Debug\EntityFramework.dll
+D:\KM\CPOS\CPOSService\CPOSLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\KM\CPOS\CPOSService\CPOSLibrary\bin\Debug\EntityFramework.xml
+D:\KM\CPOS\CPOSService\CPOSLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\KM\CPOS\CPOSService\CPOSLibrary\obj\Debug\CPOSLibrary.csprojResolveAssemblyReference.cache
+D:\KM\CPOS\CPOSService\CPOSLibrary\obj\Debug\CPOSLibrary.dll
+D:\KM\CPOS\CPOSService\CPOSLibrary\obj\Debug\CPOSLibrary.pdb

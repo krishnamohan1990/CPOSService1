@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8eabeec09c6a49a1822dda1468914b22" Name="Diagram1">
+        <EntityTypeShape EntityType="CPOSDBModel.Activation" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Category" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Currency" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Customer" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Dish" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.EmailSetting" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.EmployeeRegistration" Width="1.5" PointX="3.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Expense" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.ExpenseType" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.GridGrouping" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Hotel" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Kitchen" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.LedgerBook" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Log" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Member" Width="1.5" PointX="8.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.MemberLedger" Width="1.5" PointX="11" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.NotesMaster" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.OtherSetting" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Payment" Width="1.5" PointX="9.25" PointY="59.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.PosGrouping" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.PosGrouping1" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.PosPrinterSetting" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Product" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Product_OpeningStock" Width="1.5" PointX="8.5" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Purchase" Width="1.5" PointX="9.25" PointY="53.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Purchase_Join" Width="1.5" PointX="11.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.R_Table" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Recipe" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Recipe_Join" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Registration" Width="1.5" PointX="0.75" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_BillingInfoEB" Width="1.5" PointX="3" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_BillingInfoHD" Width="1.5" PointX="6" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_BillingInfoKOT" Width="1.5" PointX="3" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_BillingInfoTA" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_OrderedProductBillEB" Width="1.5" PointX="5.25" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_OrderedProductBillHD" Width="1.5" PointX="8.25" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_OrderedProductBillKOT" Width="1.5" PointX="5.25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_OrderedProductBillTA" Width="1.5" PointX="8.25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_OrderedProductKOT" Width="1.5" PointX="5.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.RestaurantPOS_OrderInfoKOT" Width="1.5" PointX="11.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.SMSSetting" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Stock_Store" Width="1.5" PointX="8" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Stock_Store_Join" Width="1.5" PointX="10.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.StockTransfer" Width="1.5" PointX="3" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.StockTransfer_Join" Width="1.5" PointX="5.25" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Supplier" Width="1.5" PointX="7" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.SupplierLedgerBook" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Temp_Stock" Width="1.5" PointX="13.5" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Temp_Stock_RM" Width="1.5" PointX="7.5" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Temp_Stock_Store" Width="1.5" PointX="5.25" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.TempRestaurantPOS_OrderedProductKOT" Width="1.5" PointX="5.25" PointY="47.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.TempRestaurantPOS_OrderInfoKOT" Width="1.5" PointX="11.25" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Voucher" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Voucher_OtherDetails" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Wallet" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.Warehouse" Width="1.5" PointX="3" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.WarehouseType" Width="1.5" PointX="0.75" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.WorkPeriodEnd" Width="1.5" PointX="11" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPOSDBModel.WorkPeriodStart" Width="1.5" PointX="8.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="CPOSDBModel.FK_Dish_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Customer_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Dish_Kitchen" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Recipe_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillEB_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillHD_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillKOT_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillTA_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductKOT_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Stock_Store_Join_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_TempRestaurantPOS_OrderedProductKOT_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_TempStock_Store_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_BillingInfoHD_EmployeeRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Expense_ExpenseType" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Voucher_OtherDetails_Expense" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_StockTransfer_Kitchen" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Logs_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_MemberLedger_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Payment_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Product_OpeningStock_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Purchase_Join_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Recipe_Join_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_StockTransfer_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Temp_Stock_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Temp_Stock_RM_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Product_OpeningStock_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Purchase_Join_Purchase" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Purchase_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Purchase_Join_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillKOT_R_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderInfoKOT_R_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_TempRestaurantPOS_OrderInfoKOT_R_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Recipe_Join_Recipe" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_BillingInfoEB_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_BillingInfoHD_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_BillingInfoKOT_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_BillingInfoTA_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderInfoKOT_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_TempRestaurantPOS_OrderInfoKOT_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillEB_RestaurantPOS_BillingInfoEB" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillHD_RestaurantPOS_BillingInfoHD" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillKOT_TempRestaurantPOS_OrderInfoKOT" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillTA_RestaurantPOS_BillingInfoTA" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Stock_Store_Join_Stock_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_StockTransfer_Join_StockTransfer" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_StockTransfer_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Temp_Stock_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_TempRestaurantPOS_OrderInfoKOT_TempRestaurantPOS_OrderInfoKOT" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Voucher_OtherDetails_Voucher" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_Warehouse_WarehouseType" ManuallyRouted="false" />
+        <AssociationConnector Association="CPOSDBModel.FK_WorkPeriodEnd_WorkPeriodStart" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

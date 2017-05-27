@@ -1,0 +1,1401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CPOSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Activation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HardwareID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ActivationID" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryName" />
+    </Key>
+    <Property Name="CategoryName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VAT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ST" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SC" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="BackColor" Type="Int32" Nullable="false" />
+    <Property Name="Cat_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Dishes" Relationship="Self.FK_Dish_Category" FromRole="Category" ToRole="Dish" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Currencyname" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerDOB" Type="DateTime" Precision="0" />
+    <Property Name="Contact" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="TicketId" Type="Int32" />
+    <NavigationProperty Name="Customer1" Relationship="Self.FK_Customer_Customer" FromRole="Customer" ToRole="Customer1" />
+    <NavigationProperty Name="Customer2" Relationship="Self.FK_Customer_Customer" FromRole="Customer1" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Dish">
+    <Key>
+      <PropertyRef Name="DishName" />
+    </Key>
+    <Property Name="DishName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="BackColor" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Dish_Category" FromRole="Dish" ToRole="Category" />
+    <NavigationProperty Name="Kitchen" Relationship="Self.FK_Dish_Kitchen" FromRole="Dish" ToRole="Kitchen" />
+    <NavigationProperty Name="Recipes" Relationship="Self.FK_Recipe_Dish" FromRole="Dish" ToRole="Recipe" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillEB" Relationship="Self.FK_RestaurantPOS_OrderedProductBillEB_Dish" FromRole="Dish" ToRole="RestaurantPOS_OrderedProductBillEB" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillHD" Relationship="Self.FK_RestaurantPOS_OrderedProductBillHD_Dish" FromRole="Dish" ToRole="RestaurantPOS_OrderedProductBillHD" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillKOT" Relationship="Self.FK_RestaurantPOS_OrderedProductBillKOT_Dish" FromRole="Dish" ToRole="RestaurantPOS_OrderedProductBillKOT" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillTA" Relationship="Self.FK_RestaurantPOS_OrderedProductBillTA_Dish" FromRole="Dish" ToRole="RestaurantPOS_OrderedProductBillTA" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductKOT" Relationship="Self.FK_RestaurantPOS_OrderedProductKOT_Dish" FromRole="Dish" ToRole="RestaurantPOS_OrderedProductKOT" />
+    <NavigationProperty Name="Stock_Store_Join" Relationship="Self.FK_Stock_Store_Join_Dish" FromRole="Dish" ToRole="Stock_Store_Join" />
+    <NavigationProperty Name="TempRestaurantPOS_OrderedProductKOT" Relationship="Self.FK_TempRestaurantPOS_OrderedProductKOT_Dish" FromRole="Dish" ToRole="TempRestaurantPOS_OrderedProductKOT" />
+    <NavigationProperty Name="Temp_Stock_Store" Relationship="Self.FK_TempStock_Store_Dish" FromRole="Dish" ToRole="Temp_Stock_Store" />
+  </EntityType>
+  <EntityType Name="EmailSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServerName" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SMTPAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Port" Type="Int32" Nullable="false" />
+    <Property Name="TLS_SSL_Required" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IsDefault" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeRegistration">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DateOfJoining" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="Active" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoHD" Relationship="Self.FK_RestaurantPOS_BillingInfoHD_EmployeeRegistration" FromRole="EmployeeRegistration" ToRole="RestaurantPOS_BillingInfoHD" />
+  </EntityType>
+  <EntityType Name="Expense">
+    <Key>
+      <PropertyRef Name="ExpenseName" />
+    </Key>
+    <Property Name="ExpenseName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ExpenseType" Relationship="Self.FK_Expense_ExpenseType" FromRole="Expense" ToRole="ExpenseType" />
+    <NavigationProperty Name="Voucher_OtherDetails" Relationship="Self.FK_Voucher_OtherDetails_Expense" FromRole="Expense" ToRole="Voucher_OtherDetails" />
+  </EntityType>
+  <EntityType Name="ExpenseType">
+    <Key>
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="Type" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Expenses" Relationship="Self.FK_Expense_ExpenseType" FromRole="ExpenseType" ToRole="Expense" />
+  </EntityType>
+  <EntityType Name="GridGrouping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Col1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Col2" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HotelName" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="AddressLine1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="TIN" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="STNo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="CIN" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="BaseCurrency" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TicketFooterMessage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kitchen">
+    <Key>
+      <PropertyRef Name="Kitchenname" />
+    </Key>
+    <Property Name="Kitchenname" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Printer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsEnabled" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Dishes" Relationship="Self.FK_Dish_Kitchen" FromRole="Kitchen" ToRole="Dish" />
+    <NavigationProperty Name="StockTransfers" Relationship="Self.FK_StockTransfer_Kitchen" FromRole="Kitchen" ToRole="StockTransfer" />
+  </EntityType>
+  <EntityType Name="LedgerBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LedgerNo" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Label" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Debit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Credit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PartyID" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Operation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_Logs_Registration" FromRole="Logs" ToRole="Registration" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="MemberLedgers" Relationship="Self.FK_MemberLedger_Member" FromRole="Member" ToRole="MemberLedger" />
+  </EntityType>
+  <EntityType Name="MemberLedger">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="LedgerNo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Label" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Debit" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Member" Relationship="Self.FK_MemberLedger_Member" FromRole="MemberLedger" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="NotesMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtherSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParcelCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="HomeDeliveryCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CashDrawer" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="VAT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ServiceTax" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ServiceCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TA" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="HD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="EB" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="KG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PaymentMode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentModeDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_Payment_Supplier" FromRole="Payment" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="PosGrouping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Col1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Col2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col3" Type="Int32" />
+    <Property Name="Col4" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col5" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col6" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col7" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col8" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col9" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col10" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col11" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col12" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col13" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col14" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PosGrouping1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Col1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Col2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col3" Type="Int32" />
+    <Property Name="Col4" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col5" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col6" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col7" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col8" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col9" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col10" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col11" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col12" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col13" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Col14" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Col15" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PosPrinterSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrinterName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PrinterType" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IsEnabled" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ReorderPoint" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product_OpeningStock" Relationship="Self.FK_Product_OpeningStock_Product1" FromRole="Product" ToRole="Product_OpeningStock" />
+    <NavigationProperty Name="Purchase_Join" Relationship="Self.FK_Purchase_Join_Product" FromRole="Product" ToRole="Purchase_Join" />
+    <NavigationProperty Name="Recipe_Join" Relationship="Self.FK_Recipe_Join_Product" FromRole="Product" ToRole="Recipe_Join" />
+    <NavigationProperty Name="StockTransfer_Join" Relationship="Self.FK_StockTransfer_Product" FromRole="Product" ToRole="StockTransfer_Join" />
+    <NavigationProperty Name="Temp_Stock" Relationship="Self.FK_Temp_Stock_Product" FromRole="Product" ToRole="Temp_Stock" />
+    <NavigationProperty Name="Temp_Stock_RM" Relationship="Self.FK_Temp_Stock_RM_Product" FromRole="Product" ToRole="Temp_Stock_RM" />
+  </EntityType>
+  <EntityType Name="Product_OpeningStock">
+    <Key>
+      <PropertyRef Name="PS_ID" />
+    </Key>
+    <Property Name="PS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="HasExpiryDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ExpiryDate" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Product_OpeningStock_Product1" FromRole="Product_OpeningStock" ToRole="Product" />
+    <NavigationProperty Name="Warehouse" Relationship="Self.FK_Product_OpeningStock_Warehouse" FromRole="Product_OpeningStock" ToRole="Warehouse" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="ST_ID" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PurchaseType" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SubTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PreviousDue" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FreightCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OtherCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="RoundOff" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalPayment" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PaymentDue" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Purchase_Join" Relationship="Self.FK_Purchase_Join_Purchase" FromRole="Purchase" ToRole="Purchase_Join" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_Purchase_Supplier" FromRole="Purchase" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Purchase_Join">
+    <Key>
+      <PropertyRef Name="SP_ID" />
+    </Key>
+    <Property Name="SP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="HasExpirydate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ExpiryDate" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Purchase_Join_Product" FromRole="Purchase_Join" ToRole="Product" />
+    <NavigationProperty Name="Purchase" Relationship="Self.FK_Purchase_Join_Purchase" FromRole="Purchase_Join" ToRole="Purchase" />
+    <NavigationProperty Name="Warehouse" Relationship="Self.FK_Purchase_Join_Warehouse" FromRole="Purchase_Join" ToRole="Warehouse" />
+  </EntityType>
+  <EntityType Name="R_Table">
+    <Key>
+      <PropertyRef Name="TableNo" />
+    </Key>
+    <Property Name="TableNo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BkColor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillKOT" Relationship="Self.FK_RestaurantPOS_OrderedProductBillKOT_R_Table" FromRole="R_Table" ToRole="RestaurantPOS_OrderedProductBillKOT" />
+    <NavigationProperty Name="RestaurantPOS_OrderInfoKOT" Relationship="Self.FK_RestaurantPOS_OrderInfoKOT_R_Table" FromRole="R_Table" ToRole="RestaurantPOS_OrderInfoKOT" />
+    <NavigationProperty Name="TempRestaurantPOS_OrderInfoKOT" Relationship="Self.FK_TempRestaurantPOS_OrderInfoKOT_R_Table" FromRole="R_Table" ToRole="TempRestaurantPOS_OrderInfoKOT" />
+  </EntityType>
+  <EntityType Name="Recipe">
+    <Key>
+      <PropertyRef Name="R_ID" />
+    </Key>
+    <Property Name="R_ID" Type="Int32" Nullable="false" />
+    <Property Name="RecipeName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="FixedCost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_Recipe_Dish" FromRole="Recipe" ToRole="Dish" />
+    <NavigationProperty Name="Recipe_Join" Relationship="Self.FK_Recipe_Join_Recipe" FromRole="Recipe" ToRole="Recipe_Join" />
+  </EntityType>
+  <EntityType Name="Recipe_Join">
+    <Key>
+      <PropertyRef Name="RJ_ID" />
+    </Key>
+    <Property Name="RJ_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Recipe_Join_Product" FromRole="Recipe_Join" ToRole="Product" />
+    <NavigationProperty Name="Recipe" Relationship="Self.FK_Recipe_Join_Recipe" FromRole="Recipe_Join" ToRole="Recipe" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="UserType" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="JoiningDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Active" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Logs" Relationship="Self.FK_Logs_Registration" FromRole="Registration" ToRole="Logs" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoEB" Relationship="Self.FK_RestaurantPOS_BillingInfoEB_Registration" FromRole="Registration" ToRole="RestaurantPOS_BillingInfoEB" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoHD" Relationship="Self.FK_RestaurantPOS_BillingInfoHD_Registration" FromRole="Registration" ToRole="RestaurantPOS_BillingInfoHD" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoKOT" Relationship="Self.FK_RestaurantPOS_BillingInfoKOT_Registration" FromRole="Registration" ToRole="RestaurantPOS_BillingInfoKOT" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoTA" Relationship="Self.FK_RestaurantPOS_BillingInfoTA_Registration" FromRole="Registration" ToRole="RestaurantPOS_BillingInfoTA" />
+    <NavigationProperty Name="RestaurantPOS_OrderInfoKOT" Relationship="Self.FK_RestaurantPOS_OrderInfoKOT_Registration" FromRole="Registration" ToRole="RestaurantPOS_OrderInfoKOT" />
+    <NavigationProperty Name="TempRestaurantPOS_OrderInfoKOT" Relationship="Self.FK_TempRestaurantPOS_OrderInfoKOT_Registration" FromRole="Registration" ToRole="TempRestaurantPOS_OrderInfoKOT" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_BillingInfoEB">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BillNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EBDiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cash" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Change" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="BillNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EB_Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="DiscountReason" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Member_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_RestaurantPOS_BillingInfoEB_Registration" FromRole="RestaurantPOS_BillingInfoEB" ToRole="Registration" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillEB" Relationship="Self.FK_RestaurantPOS_OrderedProductBillEB_RestaurantPOS_BillingInfoEB" FromRole="RestaurantPOS_BillingInfoEB" ToRole="RestaurantPOS_OrderedProductBillEB" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_BillingInfoHD">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BillNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SubTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="HDDiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="HomeDeliveryCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DiscountReason" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Member_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="EmployeeRegistration" Relationship="Self.FK_RestaurantPOS_BillingInfoHD_EmployeeRegistration" FromRole="RestaurantPOS_BillingInfoHD" ToRole="EmployeeRegistration" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_RestaurantPOS_BillingInfoHD_Registration" FromRole="RestaurantPOS_BillingInfoHD" ToRole="Registration" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillHD" Relationship="Self.FK_RestaurantPOS_OrderedProductBillHD_RestaurantPOS_BillingInfoHD" FromRole="RestaurantPOS_BillingInfoHD" ToRole="RestaurantPOS_OrderedProductBillHD" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_BillingInfoKOT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BillNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KOTDiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cash" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Change" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PaymentMode" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DiscountReason" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Member_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_RestaurantPOS_BillingInfoKOT_Registration" FromRole="RestaurantPOS_BillingInfoKOT" ToRole="Registration" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillKOT" Relationship="Self.FK_RestaurantPOS_OrderedProductBillKOT_TempRestaurantPOS_OrderInfoKOT" FromRole="RestaurantPOS_BillingInfoKOT" ToRole="RestaurantPOS_OrderedProductBillKOT" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_BillingInfoTA">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BillNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SubTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TADiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ParcelCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cash" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Change" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DiscountReason" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Member_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_RestaurantPOS_BillingInfoTA_Registration" FromRole="RestaurantPOS_BillingInfoTA" ToRole="Registration" />
+    <NavigationProperty Name="RestaurantPOS_OrderedProductBillTA" Relationship="Self.FK_RestaurantPOS_OrderedProductBillTA_RestaurantPOS_BillingInfoTA" FromRole="RestaurantPOS_BillingInfoTA" ToRole="RestaurantPOS_OrderedProductBillTA" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_OrderedProductBillEB">
+    <Key>
+      <PropertyRef Name="OP_ID" />
+    </Key>
+    <Property Name="OP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_RestaurantPOS_OrderedProductBillEB_Dish" FromRole="RestaurantPOS_OrderedProductBillEB" ToRole="Dish" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoEB" Relationship="Self.FK_RestaurantPOS_OrderedProductBillEB_RestaurantPOS_BillingInfoEB" FromRole="RestaurantPOS_OrderedProductBillEB" ToRole="RestaurantPOS_BillingInfoEB" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_OrderedProductBillHD">
+    <Key>
+      <PropertyRef Name="OP_ID" />
+    </Key>
+    <Property Name="OP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_RestaurantPOS_OrderedProductBillHD_Dish" FromRole="RestaurantPOS_OrderedProductBillHD" ToRole="Dish" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoHD" Relationship="Self.FK_RestaurantPOS_OrderedProductBillHD_RestaurantPOS_BillingInfoHD" FromRole="RestaurantPOS_OrderedProductBillHD" ToRole="RestaurantPOS_BillingInfoHD" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_OrderedProductBillKOT">
+    <Key>
+      <PropertyRef Name="OP_ID" />
+    </Key>
+    <Property Name="OP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_RestaurantPOS_OrderedProductBillKOT_Dish" FromRole="RestaurantPOS_OrderedProductBillKOT" ToRole="Dish" />
+    <NavigationProperty Name="R_Table" Relationship="Self.FK_RestaurantPOS_OrderedProductBillKOT_R_Table" FromRole="RestaurantPOS_OrderedProductBillKOT" ToRole="R_Table" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoKOT" Relationship="Self.FK_RestaurantPOS_OrderedProductBillKOT_TempRestaurantPOS_OrderInfoKOT" FromRole="RestaurantPOS_OrderedProductBillKOT" ToRole="RestaurantPOS_BillingInfoKOT" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_OrderedProductBillTA">
+    <Key>
+      <PropertyRef Name="OP_ID" />
+    </Key>
+    <Property Name="OP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_RestaurantPOS_OrderedProductBillTA_Dish" FromRole="RestaurantPOS_OrderedProductBillTA" ToRole="Dish" />
+    <NavigationProperty Name="RestaurantPOS_BillingInfoTA" Relationship="Self.FK_RestaurantPOS_OrderedProductBillTA_RestaurantPOS_BillingInfoTA" FromRole="RestaurantPOS_OrderedProductBillTA" ToRole="RestaurantPOS_BillingInfoTA" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_OrderedProductKOT">
+    <Key>
+      <PropertyRef Name="OP_ID" />
+    </Key>
+    <Property Name="OP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketID" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_RestaurantPOS_OrderedProductKOT_Dish" FromRole="RestaurantPOS_OrderedProductKOT" ToRole="Dish" />
+  </EntityType>
+  <EntityType Name="RestaurantPOS_OrderInfoKOT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="TicketNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="R_Table" Relationship="Self.FK_RestaurantPOS_OrderInfoKOT_R_Table" FromRole="RestaurantPOS_OrderInfoKOT" ToRole="R_Table" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_RestaurantPOS_OrderInfoKOT_Registration" FromRole="RestaurantPOS_OrderInfoKOT" ToRole="Registration" />
+  </EntityType>
+  <EntityType Name="SMSSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="APIURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDefault" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IsEnabled" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stock_Store">
+    <Key>
+      <PropertyRef Name="St_ID" />
+    </Key>
+    <Property Name="St_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Stock_Store_Join" Relationship="Self.FK_Stock_Store_Join_Stock_Store" FromRole="Stock_Store" ToRole="Stock_Store_Join" />
+  </EntityType>
+  <EntityType Name="Stock_Store_Join">
+    <Key>
+      <PropertyRef Name="SSJ_ID" />
+    </Key>
+    <Property Name="SSJ_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_Stock_Store_Join_Dish" FromRole="Stock_Store_Join" ToRole="Dish" />
+    <NavigationProperty Name="Stock_Store" Relationship="Self.FK_Stock_Store_Join_Stock_Store" FromRole="Stock_Store_Join" ToRole="Stock_Store" />
+  </EntityType>
+  <EntityType Name="StockTransfer">
+    <Key>
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="ST_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Kitchen" Relationship="Self.FK_StockTransfer_Kitchen" FromRole="StockTransfer" ToRole="Kitchen" />
+    <NavigationProperty Name="StockTransfer_Join" Relationship="Self.FK_StockTransfer_Join_StockTransfer" FromRole="StockTransfer" ToRole="StockTransfer_Join" />
+  </EntityType>
+  <EntityType Name="StockTransfer_Join">
+    <Key>
+      <PropertyRef Name="STJ_ID" />
+    </Key>
+    <Property Name="STJ_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExpiryDate" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_StockTransfer_Product" FromRole="StockTransfer_Join" ToRole="Product" />
+    <NavigationProperty Name="StockTransfer" Relationship="Self.FK_StockTransfer_Join_StockTransfer" FromRole="StockTransfer_Join" ToRole="StockTransfer" />
+    <NavigationProperty Name="Warehouse" Relationship="Self.FK_StockTransfer_Warehouse" FromRole="StockTransfer_Join" ToRole="Warehouse" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierID" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="ContactNo" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TIN" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="STNo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="CST" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PAN" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AccountName" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="AccountNumber" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Bank" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="Branch" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="IFSCCode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="OpeningBalance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OpeningBalanceType" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK_Payment_Supplier" FromRole="Supplier" ToRole="Payment" />
+    <NavigationProperty Name="Purchases" Relationship="Self.FK_Purchase_Supplier" FromRole="Supplier" ToRole="Purchase" />
+  </EntityType>
+  <EntityType Name="SupplierLedgerBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LedgerNo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Label" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Debit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Credit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PartyID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Temp_Stock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="HasExpiryDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ExpiryDate" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Temp_Stock_Product" FromRole="Temp_Stock" ToRole="Product" />
+    <NavigationProperty Name="Warehouse" Relationship="Self.FK_Temp_Stock_Warehouse" FromRole="Temp_Stock" ToRole="Warehouse" />
+  </EntityType>
+  <EntityType Name="Temp_Stock_RM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Temp_Stock_RM_Product" FromRole="Temp_Stock_RM" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Temp_Stock_Store">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_TempStock_Store_Dish" FromRole="Temp_Stock_Store" ToRole="Dish" />
+  </EntityType>
+  <EntityType Name="TempRestaurantPOS_OrderedProductKOT">
+    <Key>
+      <PropertyRef Name="OP_ID" />
+    </Key>
+    <Property Name="OP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketID" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="STAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SCAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPer" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="T_Number" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_TempRestaurantPOS_OrderedProductKOT_Dish" FromRole="TempRestaurantPOS_OrderedProductKOT" ToRole="Dish" />
+  </EntityType>
+  <EntityType Name="TempRestaurantPOS_OrderInfoKOT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TicketNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BillDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="TicketNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="R_Table" Relationship="Self.FK_TempRestaurantPOS_OrderInfoKOT_R_Table" FromRole="TempRestaurantPOS_OrderInfoKOT" ToRole="R_Table" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_TempRestaurantPOS_OrderInfoKOT_Registration" FromRole="TempRestaurantPOS_OrderInfoKOT" ToRole="Registration" />
+    <NavigationProperty Name="TempRestaurantPOS_OrderInfoKOT1" Relationship="Self.FK_TempRestaurantPOS_OrderInfoKOT_TempRestaurantPOS_OrderInfoKOT" FromRole="TempRestaurantPOS_OrderInfoKOT" ToRole="TempRestaurantPOS_OrderInfoKOT1" />
+    <NavigationProperty Name="TempRestaurantPOS_OrderInfoKOT2" Relationship="Self.FK_TempRestaurantPOS_OrderInfoKOT_TempRestaurantPOS_OrderInfoKOT" FromRole="TempRestaurantPOS_OrderInfoKOT1" ToRole="TempRestaurantPOS_OrderInfoKOT" />
+  </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="VoucherNo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMode" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Voucher_OtherDetails" Relationship="Self.FK_Voucher_OtherDetails_Voucher" FromRole="Voucher" ToRole="Voucher_OtherDetails" />
+  </EntityType>
+  <EntityType Name="Voucher_OtherDetails">
+    <Key>
+      <PropertyRef Name="VD_ID" />
+    </Key>
+    <Property Name="VD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Expense" Relationship="Self.FK_Voucher_OtherDetails_Expense" FromRole="Voucher_OtherDetails" ToRole="Expense" />
+    <NavigationProperty Name="Voucher" Relationship="Self.FK_Voucher_OtherDetails_Voucher" FromRole="Voucher_OtherDetails" ToRole="Voucher" />
+  </EntityType>
+  <EntityType Name="Wallet">
+    <Key>
+      <PropertyRef Name="WalletType" />
+    </Key>
+    <Property Name="WalletType" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="WarehouseName" />
+    </Key>
+    <Property Name="WarehouseName" Type="String" MaxLength="250" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Product_OpeningStock" Relationship="Self.FK_Product_OpeningStock_Warehouse" FromRole="Warehouse" ToRole="Product_OpeningStock" />
+    <NavigationProperty Name="Purchase_Join" Relationship="Self.FK_Purchase_Join_Warehouse" FromRole="Warehouse" ToRole="Purchase_Join" />
+    <NavigationProperty Name="StockTransfer_Join" Relationship="Self.FK_StockTransfer_Warehouse" FromRole="Warehouse" ToRole="StockTransfer_Join" />
+    <NavigationProperty Name="Temp_Stock" Relationship="Self.FK_Temp_Stock_Warehouse" FromRole="Warehouse" ToRole="Temp_Stock" />
+    <NavigationProperty Name="WarehouseType" Relationship="Self.FK_Warehouse_WarehouseType" FromRole="Warehouse" ToRole="WarehouseType" />
+  </EntityType>
+  <EntityType Name="WarehouseType">
+    <Key>
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="Type" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Warehouses" Relationship="Self.FK_Warehouse_WarehouseType" FromRole="WarehouseType" ToRole="Warehouse" />
+  </EntityType>
+  <EntityType Name="WorkPeriodEnd">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="WPEnd" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="WorkPeriodStart" Relationship="Self.FK_WorkPeriodEnd_WorkPeriodStart" FromRole="WorkPeriodEnd" ToRole="WorkPeriodStart" />
+  </EntityType>
+  <EntityType Name="WorkPeriodStart">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WPStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="WorkPeriodEnd" Relationship="Self.FK_WorkPeriodEnd_WorkPeriodStart" FromRole="WorkPeriodStart" ToRole="WorkPeriodEnd" />
+  </EntityType>
+  <Association Name="FK_Dish_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Dish" Type="Self.Dish" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Customer_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Customer1">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dish_Kitchen">
+    <End Role="Kitchen" Type="Self.Kitchen" Multiplicity="1" />
+    <End Role="Dish" Type="Self.Dish" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Recipe_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillEB_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="RestaurantPOS_OrderedProductBillEB" Type="Self.RestaurantPOS_OrderedProductBillEB" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillHD_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="RestaurantPOS_OrderedProductBillHD" Type="Self.RestaurantPOS_OrderedProductBillHD" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillKOT_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="RestaurantPOS_OrderedProductBillKOT" Type="Self.RestaurantPOS_OrderedProductBillKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillTA_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="RestaurantPOS_OrderedProductBillTA" Type="Self.RestaurantPOS_OrderedProductBillTA" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductKOT_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="RestaurantPOS_OrderedProductKOT" Type="Self.RestaurantPOS_OrderedProductKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Stock_Store_Join_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="Stock_Store_Join" Type="Self.Stock_Store_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_TempRestaurantPOS_OrderedProductKOT_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="TempRestaurantPOS_OrderedProductKOT" Type="Self.TempRestaurantPOS_OrderedProductKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_TempStock_Store_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Temp_Stock_Store" Type="Self.Temp_Stock_Store" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_BillingInfoHD_EmployeeRegistration">
+    <End Role="EmployeeRegistration" Type="Self.EmployeeRegistration" Multiplicity="1" />
+    <End Role="RestaurantPOS_BillingInfoHD" Type="Self.RestaurantPOS_BillingInfoHD" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Expense_ExpenseType">
+    <End Role="ExpenseType" Type="Self.ExpenseType" Multiplicity="1" />
+    <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Voucher_OtherDetails_Expense">
+    <End Role="Expense" Type="Self.Expense" Multiplicity="1" />
+    <End Role="Voucher_OtherDetails" Type="Self.Voucher_OtherDetails" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_StockTransfer_Kitchen">
+    <End Role="Kitchen" Type="Self.Kitchen" Multiplicity="1" />
+    <End Role="StockTransfer" Type="Self.StockTransfer" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Logs_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Logs" Type="Self.Log" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_MemberLedger_Member">
+    <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+    <End Role="MemberLedger" Type="Self.MemberLedger" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Payment_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Product_OpeningStock_Product1">
+    <End Role="Product" Type="Self.Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Product_OpeningStock" Type="Self.Product_OpeningStock" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Purchase_Join_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Purchase_Join" Type="Self.Purchase_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Recipe_Join_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Recipe_Join" Type="Self.Recipe_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_StockTransfer_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="StockTransfer_Join" Type="Self.StockTransfer_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Temp_Stock_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Temp_Stock" Type="Self.Temp_Stock" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Temp_Stock_RM_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Temp_Stock_RM" Type="Self.Temp_Stock_RM" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Product_OpeningStock_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="Product_OpeningStock" Type="Self.Product_OpeningStock" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Purchase_Join_Purchase">
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Purchase_Join" Type="Self.Purchase_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Purchase_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Purchase_Join_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="Purchase_Join" Type="Self.Purchase_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillKOT_R_Table">
+    <End Role="R_Table" Type="Self.R_Table" Multiplicity="1" />
+    <End Role="RestaurantPOS_OrderedProductBillKOT" Type="Self.RestaurantPOS_OrderedProductBillKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderInfoKOT_R_Table">
+    <End Role="R_Table" Type="Self.R_Table" Multiplicity="1" />
+    <End Role="RestaurantPOS_OrderInfoKOT" Type="Self.RestaurantPOS_OrderInfoKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_TempRestaurantPOS_OrderInfoKOT_R_Table">
+    <End Role="R_Table" Type="Self.R_Table" Multiplicity="1" />
+    <End Role="TempRestaurantPOS_OrderInfoKOT" Type="Self.TempRestaurantPOS_OrderInfoKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Recipe_Join_Recipe">
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Recipe_Join" Type="Self.Recipe_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_BillingInfoEB_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+    <End Role="RestaurantPOS_BillingInfoEB" Type="Self.RestaurantPOS_BillingInfoEB" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_BillingInfoHD_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+    <End Role="RestaurantPOS_BillingInfoHD" Type="Self.RestaurantPOS_BillingInfoHD" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_BillingInfoKOT_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+    <End Role="RestaurantPOS_BillingInfoKOT" Type="Self.RestaurantPOS_BillingInfoKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_BillingInfoTA_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+    <End Role="RestaurantPOS_BillingInfoTA" Type="Self.RestaurantPOS_BillingInfoTA" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderInfoKOT_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+    <End Role="RestaurantPOS_OrderInfoKOT" Type="Self.RestaurantPOS_OrderInfoKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_TempRestaurantPOS_OrderInfoKOT_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TempRestaurantPOS_OrderInfoKOT" Type="Self.TempRestaurantPOS_OrderInfoKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillEB_RestaurantPOS_BillingInfoEB">
+    <End Role="RestaurantPOS_BillingInfoEB" Type="Self.RestaurantPOS_BillingInfoEB" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RestaurantPOS_OrderedProductBillEB" Type="Self.RestaurantPOS_OrderedProductBillEB" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillHD_RestaurantPOS_BillingInfoHD">
+    <End Role="RestaurantPOS_BillingInfoHD" Type="Self.RestaurantPOS_BillingInfoHD" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RestaurantPOS_OrderedProductBillHD" Type="Self.RestaurantPOS_OrderedProductBillHD" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillKOT_TempRestaurantPOS_OrderInfoKOT">
+    <End Role="RestaurantPOS_BillingInfoKOT" Type="Self.RestaurantPOS_BillingInfoKOT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RestaurantPOS_OrderedProductBillKOT" Type="Self.RestaurantPOS_OrderedProductBillKOT" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_RestaurantPOS_OrderedProductBillTA_RestaurantPOS_BillingInfoTA">
+    <End Role="RestaurantPOS_BillingInfoTA" Type="Self.RestaurantPOS_BillingInfoTA" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RestaurantPOS_OrderedProductBillTA" Type="Self.RestaurantPOS_OrderedProductBillTA" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Stock_Store_Join_Stock_Store">
+    <End Role="Stock_Store" Type="Self.Stock_Store" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Stock_Store_Join" Type="Self.Stock_Store_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_StockTransfer_Join_StockTransfer">
+    <End Role="StockTransfer" Type="Self.StockTransfer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StockTransfer_Join" Type="Self.StockTransfer_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_StockTransfer_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="StockTransfer_Join" Type="Self.StockTransfer_Join" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Temp_Stock_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Temp_Stock" Type="Self.Temp_Stock" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_TempRestaurantPOS_OrderInfoKOT_TempRestaurantPOS_OrderInfoKOT">
+    <End Role="TempRestaurantPOS_OrderInfoKOT" Type="Self.TempRestaurantPOS_OrderInfoKOT" Multiplicity="1" />
+    <End Role="TempRestaurantPOS_OrderInfoKOT1" Type="Self.TempRestaurantPOS_OrderInfoKOT" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TempRestaurantPOS_OrderInfoKOT">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TempRestaurantPOS_OrderInfoKOT1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Voucher_OtherDetails_Voucher">
+    <End Role="Voucher" Type="Self.Voucher" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Voucher_OtherDetails" Type="Self.Voucher_OtherDetails" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Warehouse_WarehouseType">
+    <End Role="WarehouseType" Type="Self.WarehouseType" Multiplicity="1" />
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WorkPeriodEnd_WorkPeriodStart">
+    <End Role="WorkPeriodStart" Type="Self.WorkPeriodStart" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WorkPeriodEnd" Type="Self.WorkPeriodEnd" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WorkPeriodStart">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WorkPeriodEnd">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CPOSDBEntity" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Activations" EntityType="Self.Activation" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Currencies" EntityType="Self.Currency" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Dishes" EntityType="Self.Dish" />
+    <EntitySet Name="EmailSettings" EntityType="Self.EmailSetting" />
+    <EntitySet Name="EmployeeRegistrations" EntityType="Self.EmployeeRegistration" />
+    <EntitySet Name="Expenses" EntityType="Self.Expense" />
+    <EntitySet Name="ExpenseTypes" EntityType="Self.ExpenseType" />
+    <EntitySet Name="GridGroupings" EntityType="Self.GridGrouping" />
+    <EntitySet Name="Hotels" EntityType="Self.Hotel" />
+    <EntitySet Name="Kitchens" EntityType="Self.Kitchen" />
+    <EntitySet Name="LedgerBooks" EntityType="Self.LedgerBook" />
+    <EntitySet Name="Logs" EntityType="Self.Log" />
+    <EntitySet Name="Members" EntityType="Self.Member" />
+    <EntitySet Name="MemberLedgers" EntityType="Self.MemberLedger" />
+    <EntitySet Name="NotesMasters" EntityType="Self.NotesMaster" />
+    <EntitySet Name="OtherSettings" EntityType="Self.OtherSetting" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="PosGroupings" EntityType="Self.PosGrouping" />
+    <EntitySet Name="PosGrouping1" EntityType="Self.PosGrouping1" />
+    <EntitySet Name="PosPrinterSettings" EntityType="Self.PosPrinterSetting" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Product_OpeningStock" EntityType="Self.Product_OpeningStock" />
+    <EntitySet Name="Purchases" EntityType="Self.Purchase" />
+    <EntitySet Name="Purchase_Join" EntityType="Self.Purchase_Join" />
+    <EntitySet Name="R_Table" EntityType="Self.R_Table" />
+    <EntitySet Name="Recipes" EntityType="Self.Recipe" />
+    <EntitySet Name="Recipe_Join" EntityType="Self.Recipe_Join" />
+    <EntitySet Name="Registrations" EntityType="Self.Registration" />
+    <EntitySet Name="RestaurantPOS_BillingInfoEB" EntityType="Self.RestaurantPOS_BillingInfoEB" />
+    <EntitySet Name="RestaurantPOS_BillingInfoHD" EntityType="Self.RestaurantPOS_BillingInfoHD" />
+    <EntitySet Name="RestaurantPOS_BillingInfoKOT" EntityType="Self.RestaurantPOS_BillingInfoKOT" />
+    <EntitySet Name="RestaurantPOS_BillingInfoTA" EntityType="Self.RestaurantPOS_BillingInfoTA" />
+    <EntitySet Name="RestaurantPOS_OrderedProductBillEB" EntityType="Self.RestaurantPOS_OrderedProductBillEB" />
+    <EntitySet Name="RestaurantPOS_OrderedProductBillHD" EntityType="Self.RestaurantPOS_OrderedProductBillHD" />
+    <EntitySet Name="RestaurantPOS_OrderedProductBillKOT" EntityType="Self.RestaurantPOS_OrderedProductBillKOT" />
+    <EntitySet Name="RestaurantPOS_OrderedProductBillTA" EntityType="Self.RestaurantPOS_OrderedProductBillTA" />
+    <EntitySet Name="RestaurantPOS_OrderedProductKOT" EntityType="Self.RestaurantPOS_OrderedProductKOT" />
+    <EntitySet Name="RestaurantPOS_OrderInfoKOT" EntityType="Self.RestaurantPOS_OrderInfoKOT" />
+    <EntitySet Name="SMSSettings" EntityType="Self.SMSSetting" />
+    <EntitySet Name="Stock_Store" EntityType="Self.Stock_Store" />
+    <EntitySet Name="Stock_Store_Join" EntityType="Self.Stock_Store_Join" />
+    <EntitySet Name="StockTransfers" EntityType="Self.StockTransfer" />
+    <EntitySet Name="StockTransfer_Join" EntityType="Self.StockTransfer_Join" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="SupplierLedgerBooks" EntityType="Self.SupplierLedgerBook" />
+    <EntitySet Name="Temp_Stock" EntityType="Self.Temp_Stock" />
+    <EntitySet Name="Temp_Stock_RM" EntityType="Self.Temp_Stock_RM" />
+    <EntitySet Name="Temp_Stock_Store" EntityType="Self.Temp_Stock_Store" />
+    <EntitySet Name="TempRestaurantPOS_OrderedProductKOT" EntityType="Self.TempRestaurantPOS_OrderedProductKOT" />
+    <EntitySet Name="TempRestaurantPOS_OrderInfoKOT" EntityType="Self.TempRestaurantPOS_OrderInfoKOT" />
+    <EntitySet Name="Vouchers" EntityType="Self.Voucher" />
+    <EntitySet Name="Voucher_OtherDetails" EntityType="Self.Voucher_OtherDetails" />
+    <EntitySet Name="Wallets" EntityType="Self.Wallet" />
+    <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
+    <EntitySet Name="WarehouseTypes" EntityType="Self.WarehouseType" />
+    <EntitySet Name="WorkPeriodEnds" EntityType="Self.WorkPeriodEnd" />
+    <EntitySet Name="WorkPeriodStarts" EntityType="Self.WorkPeriodStart" />
+    <AssociationSet Name="FK_Dish_Category" Association="Self.FK_Dish_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Dish" EntitySet="Dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Customer" Association="Self.FK_Customer_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Customer1" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dish_Kitchen" Association="Self.FK_Dish_Kitchen">
+      <End Role="Kitchen" EntitySet="Kitchens" />
+      <End Role="Dish" EntitySet="Dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipe_Dish" Association="Self.FK_Recipe_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="Recipe" EntitySet="Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillEB_Dish" Association="Self.FK_RestaurantPOS_OrderedProductBillEB_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="RestaurantPOS_OrderedProductBillEB" EntitySet="RestaurantPOS_OrderedProductBillEB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillHD_Dish" Association="Self.FK_RestaurantPOS_OrderedProductBillHD_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="RestaurantPOS_OrderedProductBillHD" EntitySet="RestaurantPOS_OrderedProductBillHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillKOT_Dish" Association="Self.FK_RestaurantPOS_OrderedProductBillKOT_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="RestaurantPOS_OrderedProductBillKOT" EntitySet="RestaurantPOS_OrderedProductBillKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillTA_Dish" Association="Self.FK_RestaurantPOS_OrderedProductBillTA_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="RestaurantPOS_OrderedProductBillTA" EntitySet="RestaurantPOS_OrderedProductBillTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductKOT_Dish" Association="Self.FK_RestaurantPOS_OrderedProductKOT_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="RestaurantPOS_OrderedProductKOT" EntitySet="RestaurantPOS_OrderedProductKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Store_Join_Dish" Association="Self.FK_Stock_Store_Join_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="Stock_Store_Join" EntitySet="Stock_Store_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TempRestaurantPOS_OrderedProductKOT_Dish" Association="Self.FK_TempRestaurantPOS_OrderedProductKOT_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="TempRestaurantPOS_OrderedProductKOT" EntitySet="TempRestaurantPOS_OrderedProductKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TempStock_Store_Dish" Association="Self.FK_TempStock_Store_Dish">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="Temp_Stock_Store" EntitySet="Temp_Stock_Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_BillingInfoHD_EmployeeRegistration" Association="Self.FK_RestaurantPOS_BillingInfoHD_EmployeeRegistration">
+      <End Role="EmployeeRegistration" EntitySet="EmployeeRegistrations" />
+      <End Role="RestaurantPOS_BillingInfoHD" EntitySet="RestaurantPOS_BillingInfoHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expense_ExpenseType" Association="Self.FK_Expense_ExpenseType">
+      <End Role="ExpenseType" EntitySet="ExpenseTypes" />
+      <End Role="Expense" EntitySet="Expenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voucher_OtherDetails_Expense" Association="Self.FK_Voucher_OtherDetails_Expense">
+      <End Role="Expense" EntitySet="Expenses" />
+      <End Role="Voucher_OtherDetails" EntitySet="Voucher_OtherDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockTransfer_Kitchen" Association="Self.FK_StockTransfer_Kitchen">
+      <End Role="Kitchen" EntitySet="Kitchens" />
+      <End Role="StockTransfer" EntitySet="StockTransfers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logs_Registration" Association="Self.FK_Logs_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="Logs" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberLedger_Member" Association="Self.FK_MemberLedger_Member">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="MemberLedger" EntitySet="MemberLedgers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Supplier" Association="Self.FK_Payment_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_OpeningStock_Product1" Association="Self.FK_Product_OpeningStock_Product1">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Product_OpeningStock" EntitySet="Product_OpeningStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Join_Product" Association="Self.FK_Purchase_Join_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Purchase_Join" EntitySet="Purchase_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipe_Join_Product" Association="Self.FK_Recipe_Join_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Recipe_Join" EntitySet="Recipe_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockTransfer_Product" Association="Self.FK_StockTransfer_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="StockTransfer_Join" EntitySet="StockTransfer_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Temp_Stock_Product" Association="Self.FK_Temp_Stock_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Temp_Stock" EntitySet="Temp_Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Temp_Stock_RM_Product" Association="Self.FK_Temp_Stock_RM_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Temp_Stock_RM" EntitySet="Temp_Stock_RM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_OpeningStock_Warehouse" Association="Self.FK_Product_OpeningStock_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouses" />
+      <End Role="Product_OpeningStock" EntitySet="Product_OpeningStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Join_Purchase" Association="Self.FK_Purchase_Join_Purchase">
+      <End Role="Purchase" EntitySet="Purchases" />
+      <End Role="Purchase_Join" EntitySet="Purchase_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Supplier" Association="Self.FK_Purchase_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Purchase" EntitySet="Purchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Join_Warehouse" Association="Self.FK_Purchase_Join_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouses" />
+      <End Role="Purchase_Join" EntitySet="Purchase_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillKOT_R_Table" Association="Self.FK_RestaurantPOS_OrderedProductBillKOT_R_Table">
+      <End Role="R_Table" EntitySet="R_Table" />
+      <End Role="RestaurantPOS_OrderedProductBillKOT" EntitySet="RestaurantPOS_OrderedProductBillKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderInfoKOT_R_Table" Association="Self.FK_RestaurantPOS_OrderInfoKOT_R_Table">
+      <End Role="R_Table" EntitySet="R_Table" />
+      <End Role="RestaurantPOS_OrderInfoKOT" EntitySet="RestaurantPOS_OrderInfoKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TempRestaurantPOS_OrderInfoKOT_R_Table" Association="Self.FK_TempRestaurantPOS_OrderInfoKOT_R_Table">
+      <End Role="R_Table" EntitySet="R_Table" />
+      <End Role="TempRestaurantPOS_OrderInfoKOT" EntitySet="TempRestaurantPOS_OrderInfoKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipe_Join_Recipe" Association="Self.FK_Recipe_Join_Recipe">
+      <End Role="Recipe" EntitySet="Recipes" />
+      <End Role="Recipe_Join" EntitySet="Recipe_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_BillingInfoEB_Registration" Association="Self.FK_RestaurantPOS_BillingInfoEB_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="RestaurantPOS_BillingInfoEB" EntitySet="RestaurantPOS_BillingInfoEB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_BillingInfoHD_Registration" Association="Self.FK_RestaurantPOS_BillingInfoHD_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="RestaurantPOS_BillingInfoHD" EntitySet="RestaurantPOS_BillingInfoHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_BillingInfoKOT_Registration" Association="Self.FK_RestaurantPOS_BillingInfoKOT_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="RestaurantPOS_BillingInfoKOT" EntitySet="RestaurantPOS_BillingInfoKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_BillingInfoTA_Registration" Association="Self.FK_RestaurantPOS_BillingInfoTA_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="RestaurantPOS_BillingInfoTA" EntitySet="RestaurantPOS_BillingInfoTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderInfoKOT_Registration" Association="Self.FK_RestaurantPOS_OrderInfoKOT_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="RestaurantPOS_OrderInfoKOT" EntitySet="RestaurantPOS_OrderInfoKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TempRestaurantPOS_OrderInfoKOT_Registration" Association="Self.FK_TempRestaurantPOS_OrderInfoKOT_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="TempRestaurantPOS_OrderInfoKOT" EntitySet="TempRestaurantPOS_OrderInfoKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillEB_RestaurantPOS_BillingInfoEB" Association="Self.FK_RestaurantPOS_OrderedProductBillEB_RestaurantPOS_BillingInfoEB">
+      <End Role="RestaurantPOS_BillingInfoEB" EntitySet="RestaurantPOS_BillingInfoEB" />
+      <End Role="RestaurantPOS_OrderedProductBillEB" EntitySet="RestaurantPOS_OrderedProductBillEB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillHD_RestaurantPOS_BillingInfoHD" Association="Self.FK_RestaurantPOS_OrderedProductBillHD_RestaurantPOS_BillingInfoHD">
+      <End Role="RestaurantPOS_BillingInfoHD" EntitySet="RestaurantPOS_BillingInfoHD" />
+      <End Role="RestaurantPOS_OrderedProductBillHD" EntitySet="RestaurantPOS_OrderedProductBillHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillKOT_TempRestaurantPOS_OrderInfoKOT" Association="Self.FK_RestaurantPOS_OrderedProductBillKOT_TempRestaurantPOS_OrderInfoKOT">
+      <End Role="RestaurantPOS_BillingInfoKOT" EntitySet="RestaurantPOS_BillingInfoKOT" />
+      <End Role="RestaurantPOS_OrderedProductBillKOT" EntitySet="RestaurantPOS_OrderedProductBillKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestaurantPOS_OrderedProductBillTA_RestaurantPOS_BillingInfoTA" Association="Self.FK_RestaurantPOS_OrderedProductBillTA_RestaurantPOS_BillingInfoTA">
+      <End Role="RestaurantPOS_BillingInfoTA" EntitySet="RestaurantPOS_BillingInfoTA" />
+      <End Role="RestaurantPOS_OrderedProductBillTA" EntitySet="RestaurantPOS_OrderedProductBillTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Store_Join_Stock_Store" Association="Self.FK_Stock_Store_Join_Stock_Store">
+      <End Role="Stock_Store" EntitySet="Stock_Store" />
+      <End Role="Stock_Store_Join" EntitySet="Stock_Store_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockTransfer_Join_StockTransfer" Association="Self.FK_StockTransfer_Join_StockTransfer">
+      <End Role="StockTransfer" EntitySet="StockTransfers" />
+      <End Role="StockTransfer_Join" EntitySet="StockTransfer_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockTransfer_Warehouse" Association="Self.FK_StockTransfer_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouses" />
+      <End Role="StockTransfer_Join" EntitySet="StockTransfer_Join" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Temp_Stock_Warehouse" Association="Self.FK_Temp_Stock_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouses" />
+      <End Role="Temp_Stock" EntitySet="Temp_Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TempRestaurantPOS_OrderInfoKOT_TempRestaurantPOS_OrderInfoKOT" Association="Self.FK_TempRestaurantPOS_OrderInfoKOT_TempRestaurantPOS_OrderInfoKOT">
+      <End Role="TempRestaurantPOS_OrderInfoKOT" EntitySet="TempRestaurantPOS_OrderInfoKOT" />
+      <End Role="TempRestaurantPOS_OrderInfoKOT1" EntitySet="TempRestaurantPOS_OrderInfoKOT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voucher_OtherDetails_Voucher" Association="Self.FK_Voucher_OtherDetails_Voucher">
+      <End Role="Voucher" EntitySet="Vouchers" />
+      <End Role="Voucher_OtherDetails" EntitySet="Voucher_OtherDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Warehouse_WarehouseType" Association="Self.FK_Warehouse_WarehouseType">
+      <End Role="WarehouseType" EntitySet="WarehouseTypes" />
+      <End Role="Warehouse" EntitySet="Warehouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkPeriodEnd_WorkPeriodStart" Association="Self.FK_WorkPeriodEnd_WorkPeriodStart">
+      <End Role="WorkPeriodStart" EntitySet="WorkPeriodStarts" />
+      <End Role="WorkPeriodEnd" EntitySet="WorkPeriodEnds" />
+    </AssociationSet>
+    <FunctionImport Name="insertandupdateOrderedProductKOT">
+      <Parameter Name="ticketId" Mode="In" Type="Int32" />
+      <Parameter Name="d1" Mode="In" Type="String" />
+      <Parameter Name="d2" Mode="In" Type="Decimal" />
+      <Parameter Name="d3" Mode="In" Type="Int32" />
+      <Parameter Name="d4" Mode="In" Type="Decimal" />
+      <Parameter Name="d5" Mode="In" Type="Decimal" />
+      <Parameter Name="d6" Mode="In" Type="Decimal" />
+      <Parameter Name="d7" Mode="In" Type="Decimal" />
+      <Parameter Name="d8" Mode="In" Type="Decimal" />
+      <Parameter Name="d9" Mode="In" Type="Decimal" />
+      <Parameter Name="d10" Mode="In" Type="Decimal" />
+      <Parameter Name="d11" Mode="In" Type="Decimal" />
+      <Parameter Name="d12" Mode="In" Type="Decimal" />
+      <Parameter Name="d13" Mode="In" Type="Decimal" />
+      <Parameter Name="d14" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="insertandupdateOrderedProductKOTTemp">
+      <Parameter Name="ticketId" Mode="In" Type="Int32" />
+      <Parameter Name="d1" Mode="In" Type="String" />
+      <Parameter Name="d2" Mode="In" Type="Decimal" />
+      <Parameter Name="d3" Mode="In" Type="Int32" />
+      <Parameter Name="d4" Mode="In" Type="Decimal" />
+      <Parameter Name="d5" Mode="In" Type="Decimal" />
+      <Parameter Name="d6" Mode="In" Type="Decimal" />
+      <Parameter Name="d7" Mode="In" Type="Decimal" />
+      <Parameter Name="d8" Mode="In" Type="Decimal" />
+      <Parameter Name="d9" Mode="In" Type="Decimal" />
+      <Parameter Name="d10" Mode="In" Type="Decimal" />
+      <Parameter Name="d11" Mode="In" Type="Decimal" />
+      <Parameter Name="d12" Mode="In" Type="Decimal" />
+      <Parameter Name="d13" Mode="In" Type="Decimal" />
+      <Parameter Name="d14" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertDailyCustomer">
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="CustomerDOB" Mode="In" Type="DateTime" />
+      <Parameter Name="Contact" Mode="In" Type="String" />
+      <Parameter Name="TicketId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpInsertUpdateGrandTotal">
+      <Parameter Name="BALANCETOTAL" Mode="In" Type="Decimal" />
+      <Parameter Name="d1" Mode="In" Type="String" />
+      <Parameter Name="d2" Mode="In" Type="DateTime" />
+      <Parameter Name="d3" Mode="In" Type="String" />
+      <Parameter Name="d4" Mode="In" Type="String" />
+      <Parameter Name="d5" Mode="In" Type="String" />
+      <Parameter Name="TICKETNO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpInsertUpdateGrandTotalTemp">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="BALANCETOTAL" Mode="In" Type="Decimal" />
+      <Parameter Name="d1" Mode="In" Type="String" />
+      <Parameter Name="d2" Mode="In" Type="DateTime" />
+      <Parameter Name="d3" Mode="In" Type="String" />
+      <Parameter Name="d4" Mode="In" Type="String" />
+      <Parameter Name="d5" Mode="In" Type="String" />
+      <Parameter Name="TICKETNO" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,1164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CPOSDBModelStoreContainer" CdmEntityContainer="CPOSDBEntity">
+    <EntitySetMapping Name="Activations">
+      <EntityTypeMapping TypeName="CPOSDBModel.Activation">
+        <MappingFragment StoreEntitySet="Activation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HardwareID" ColumnName="HardwareID" />
+          <ScalarProperty Name="ActivationID" ColumnName="ActivationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="CPOSDBModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="ST" ColumnName="ST" />
+          <ScalarProperty Name="SC" ColumnName="SC" />
+          <ScalarProperty Name="BackColor" ColumnName="BackColor" />
+          <ScalarProperty Name="Cat_ID" ColumnName="Cat_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="CPOSDBModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="Currencyname" ColumnName="Currencyname" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="CPOSDBModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerDOB" ColumnName="CustomerDOB" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dishes">
+      <EntityTypeMapping TypeName="CPOSDBModel.Dish">
+        <MappingFragment StoreEntitySet="Dish">
+          <ScalarProperty Name="DishName" ColumnName="DishName" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="BackColor" ColumnName="BackColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailSettings">
+      <EntityTypeMapping TypeName="CPOSDBModel.EmailSetting">
+        <MappingFragment StoreEntitySet="EmailSetting">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="SMTPAddress" ColumnName="SMTPAddress" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="TLS_SSL_Required" ColumnName="TLS_SSL_Required" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeRegistrations">
+      <EntityTypeMapping TypeName="CPOSDBModel.EmployeeRegistration">
+        <MappingFragment StoreEntitySet="EmployeeRegistration">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expenses">
+      <EntityTypeMapping TypeName="CPOSDBModel.Expense">
+        <MappingFragment StoreEntitySet="Expense">
+          <ScalarProperty Name="ExpenseName" ColumnName="ExpenseName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpenseTypes">
+      <EntityTypeMapping TypeName="CPOSDBModel.ExpenseType">
+        <MappingFragment StoreEntitySet="ExpenseType">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GridGroupings">
+      <EntityTypeMapping TypeName="CPOSDBModel.GridGrouping">
+        <MappingFragment StoreEntitySet="GridGrouping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Col1" ColumnName="Col1" />
+          <ScalarProperty Name="Col2" ColumnName="Col2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotels">
+      <EntityTypeMapping TypeName="CPOSDBModel.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="TIN" ColumnName="TIN" />
+          <ScalarProperty Name="STNo" ColumnName="STNo" />
+          <ScalarProperty Name="CIN" ColumnName="CIN" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="BaseCurrency" ColumnName="BaseCurrency" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="TicketFooterMessage" ColumnName="TicketFooterMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kitchens">
+      <EntityTypeMapping TypeName="CPOSDBModel.Kitchen">
+        <MappingFragment StoreEntitySet="Kitchen">
+          <ScalarProperty Name="Kitchenname" ColumnName="Kitchenname" />
+          <ScalarProperty Name="Printer" ColumnName="Printer" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LedgerBooks">
+      <EntityTypeMapping TypeName="CPOSDBModel.LedgerBook">
+        <MappingFragment StoreEntitySet="LedgerBook">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LedgerNo" ColumnName="LedgerNo" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="PartyID" ColumnName="PartyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="CPOSDBModel.Log">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="CPOSDBModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberLedgers">
+      <EntityTypeMapping TypeName="CPOSDBModel.MemberLedger">
+        <MappingFragment StoreEntitySet="MemberLedger">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="LedgerNo" ColumnName="LedgerNo" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotesMasters">
+      <EntityTypeMapping TypeName="CPOSDBModel.NotesMaster">
+        <MappingFragment StoreEntitySet="NotesMaster">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtherSettings">
+      <EntityTypeMapping TypeName="CPOSDBModel.OtherSetting">
+        <MappingFragment StoreEntitySet="OtherSetting">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ParcelCharges" ColumnName="ParcelCharges" />
+          <ScalarProperty Name="HomeDeliveryCharges" ColumnName="HomeDeliveryCharges" />
+          <ScalarProperty Name="CashDrawer" ColumnName="CashDrawer" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="ServiceTax" ColumnName="ServiceTax" />
+          <ScalarProperty Name="ServiceCharges" ColumnName="ServiceCharges" />
+          <ScalarProperty Name="TA" ColumnName="TA" />
+          <ScalarProperty Name="HD" ColumnName="HD" />
+          <ScalarProperty Name="EB" ColumnName="EB" />
+          <ScalarProperty Name="KG" ColumnName="KG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="CPOSDBModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="PaymentModeDetails" ColumnName="PaymentModeDetails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosGroupings">
+      <EntityTypeMapping TypeName="CPOSDBModel.PosGrouping">
+        <MappingFragment StoreEntitySet="PosGrouping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Col1" ColumnName="Col1" />
+          <ScalarProperty Name="Col2" ColumnName="Col2" />
+          <ScalarProperty Name="Col3" ColumnName="Col3" />
+          <ScalarProperty Name="Col4" ColumnName="Col4" />
+          <ScalarProperty Name="Col5" ColumnName="Col5" />
+          <ScalarProperty Name="Col6" ColumnName="Col6" />
+          <ScalarProperty Name="Col7" ColumnName="Col7" />
+          <ScalarProperty Name="Col8" ColumnName="Col8" />
+          <ScalarProperty Name="Col9" ColumnName="Col9" />
+          <ScalarProperty Name="Col10" ColumnName="Col10" />
+          <ScalarProperty Name="Col11" ColumnName="Col11" />
+          <ScalarProperty Name="Col12" ColumnName="Col12" />
+          <ScalarProperty Name="Col13" ColumnName="Col13" />
+          <ScalarProperty Name="Col14" ColumnName="Col14" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosGrouping1">
+      <EntityTypeMapping TypeName="CPOSDBModel.PosGrouping1">
+        <MappingFragment StoreEntitySet="PosGrouping1">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Col1" ColumnName="Col1" />
+          <ScalarProperty Name="Col2" ColumnName="Col2" />
+          <ScalarProperty Name="Col3" ColumnName="Col3" />
+          <ScalarProperty Name="Col4" ColumnName="Col4" />
+          <ScalarProperty Name="Col5" ColumnName="Col5" />
+          <ScalarProperty Name="Col6" ColumnName="Col6" />
+          <ScalarProperty Name="Col7" ColumnName="Col7" />
+          <ScalarProperty Name="Col8" ColumnName="Col8" />
+          <ScalarProperty Name="Col9" ColumnName="Col9" />
+          <ScalarProperty Name="Col10" ColumnName="Col10" />
+          <ScalarProperty Name="Col11" ColumnName="Col11" />
+          <ScalarProperty Name="Col12" ColumnName="Col12" />
+          <ScalarProperty Name="Col13" ColumnName="Col13" />
+          <ScalarProperty Name="Col14" ColumnName="Col14" />
+          <ScalarProperty Name="Col15" ColumnName="Col15" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosPrinterSettings">
+      <EntityTypeMapping TypeName="CPOSDBModel.PosPrinterSetting">
+        <MappingFragment StoreEntitySet="PosPrinterSetting">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PrinterName" ColumnName="PrinterName" />
+          <ScalarProperty Name="PrinterType" ColumnName="PrinterType" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="CPOSDBModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ReorderPoint" ColumnName="ReorderPoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_OpeningStock">
+      <EntityTypeMapping TypeName="CPOSDBModel.Product_OpeningStock">
+        <MappingFragment StoreEntitySet="Product_OpeningStock">
+          <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="HasExpiryDate" ColumnName="HasExpiryDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="CPOSDBModel.Purchase">
+        <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="ST_ID" ColumnName="ST_ID" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PurchaseType" ColumnName="PurchaseType" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="DiscountPer" ColumnName="DiscountPer" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="PreviousDue" ColumnName="PreviousDue" />
+          <ScalarProperty Name="FreightCharges" ColumnName="FreightCharges" />
+          <ScalarProperty Name="OtherCharges" ColumnName="OtherCharges" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="RoundOff" ColumnName="RoundOff" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="PaymentDue" ColumnName="PaymentDue" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Join">
+      <EntityTypeMapping TypeName="CPOSDBModel.Purchase_Join">
+        <MappingFragment StoreEntitySet="Purchase_Join">
+          <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="HasExpirydate" ColumnName="HasExpirydate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="R_Table">
+      <EntityTypeMapping TypeName="CPOSDBModel.R_Table">
+        <MappingFragment StoreEntitySet="R_Table">
+          <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BkColor" ColumnName="BkColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recipes">
+      <EntityTypeMapping TypeName="CPOSDBModel.Recipe">
+        <MappingFragment StoreEntitySet="Recipe">
+          <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+          <ScalarProperty Name="RecipeName" ColumnName="RecipeName" />
+          <ScalarProperty Name="FixedCost" ColumnName="FixedCost" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recipe_Join">
+      <EntityTypeMapping TypeName="CPOSDBModel.Recipe_Join">
+        <MappingFragment StoreEntitySet="Recipe_Join">
+          <ScalarProperty Name="RJ_ID" ColumnName="RJ_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="CPOSDBModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_BillingInfoEB">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_BillingInfoEB">
+        <MappingFragment StoreEntitySet="RestaurantPOS_BillingInfoEB">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="EBDiscountPer" ColumnName="EBDiscountPer" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="BillNote" ColumnName="BillNote" />
+          <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="EB_Status" ColumnName="EB_Status" />
+          <ScalarProperty Name="DiscountReason" ColumnName="DiscountReason" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_BillingInfoHD">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_BillingInfoHD">
+        <MappingFragment StoreEntitySet="RestaurantPOS_BillingInfoHD">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="HDDiscountPer" ColumnName="HDDiscountPer" />
+          <ScalarProperty Name="HomeDeliveryCharges" ColumnName="HomeDeliveryCharges" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="BillNote" ColumnName="BillNote" />
+          <ScalarProperty Name="DiscountReason" ColumnName="DiscountReason" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_BillingInfoKOT">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_BillingInfoKOT">
+        <MappingFragment StoreEntitySet="RestaurantPOS_BillingInfoKOT">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="KOTDiscountPer" ColumnName="KOTDiscountPer" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="DiscountReason" ColumnName="DiscountReason" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_BillingInfoTA">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_BillingInfoTA">
+        <MappingFragment StoreEntitySet="RestaurantPOS_BillingInfoTA">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="TADiscountPer" ColumnName="TADiscountPer" />
+          <ScalarProperty Name="ParcelCharges" ColumnName="ParcelCharges" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="BillNote" ColumnName="BillNote" />
+          <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="DiscountReason" ColumnName="DiscountReason" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_OrderedProductBillEB">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_OrderedProductBillEB">
+        <MappingFragment StoreEntitySet="RestaurantPOS_OrderedProductBillEB">
+          <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="VATPer" ColumnName="VATPer" />
+          <ScalarProperty Name="VATAmount" ColumnName="VATAmount" />
+          <ScalarProperty Name="STPer" ColumnName="STPer" />
+          <ScalarProperty Name="STAmount" ColumnName="STAmount" />
+          <ScalarProperty Name="SCPer" ColumnName="SCPer" />
+          <ScalarProperty Name="SCAmount" ColumnName="SCAmount" />
+          <ScalarProperty Name="DiscountPer" ColumnName="DiscountPer" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_OrderedProductBillHD">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_OrderedProductBillHD">
+        <MappingFragment StoreEntitySet="RestaurantPOS_OrderedProductBillHD">
+          <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="VATPer" ColumnName="VATPer" />
+          <ScalarProperty Name="VATAmount" ColumnName="VATAmount" />
+          <ScalarProperty Name="STPer" ColumnName="STPer" />
+          <ScalarProperty Name="STAmount" ColumnName="STAmount" />
+          <ScalarProperty Name="SCPer" ColumnName="SCPer" />
+          <ScalarProperty Name="SCAmount" ColumnName="SCAmount" />
+          <ScalarProperty Name="DiscountPer" ColumnName="DiscountPer" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_OrderedProductBillKOT">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_OrderedProductBillKOT">
+        <MappingFragment StoreEntitySet="RestaurantPOS_OrderedProductBillKOT">
+          <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="VATPer" ColumnName="VATPer" />
+          <ScalarProperty Name="VATAmount" ColumnName="VATAmount" />
+          <ScalarProperty Name="STPer" ColumnName="STPer" />
+          <ScalarProperty Name="STAmount" ColumnName="STAmount" />
+          <ScalarProperty Name="SCPer" ColumnName="SCPer" />
+          <ScalarProperty Name="SCAmount" ColumnName="SCAmount" />
+          <ScalarProperty Name="DiscountPer" ColumnName="DiscountPer" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_OrderedProductBillTA">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_OrderedProductBillTA">
+        <MappingFragment StoreEntitySet="RestaurantPOS_OrderedProductBillTA">
+          <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="VATPer" ColumnName="VATPer" />
+          <ScalarProperty Name="VATAmount" ColumnName="VATAmount" />
+          <ScalarProperty Name="STPer" ColumnName="STPer" />
+          <ScalarProperty Name="STAmount" ColumnName="STAmount" />
+          <ScalarProperty Name="SCPer" ColumnName="SCPer" />
+          <ScalarProperty Name="SCAmount" ColumnName="SCAmount" />
+          <ScalarProperty Name="DiscountPer" ColumnName="DiscountPer" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_OrderedProductKOT">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_OrderedProductKOT">
+        <MappingFragment StoreEntitySet="RestaurantPOS_OrderedProductKOT">
+          <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+          <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="VATPer" ColumnName="VATPer" />
+          <ScalarProperty Name="VATAmount" ColumnName="VATAmount" />
+          <ScalarProperty Name="STPer" ColumnName="STPer" />
+          <ScalarProperty Name="STAmount" ColumnName="STAmount" />
+          <ScalarProperty Name="SCPer" ColumnName="SCPer" />
+          <ScalarProperty Name="SCAmount" ColumnName="SCAmount" />
+          <ScalarProperty Name="DiscountPer" ColumnName="DiscountPer" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantPOS_OrderInfoKOT">
+      <EntityTypeMapping TypeName="CPOSDBModel.RestaurantPOS_OrderInfoKOT">
+        <MappingFragment StoreEntitySet="RestaurantPOS_OrderInfoKOT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="TicketNote" ColumnName="TicketNote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMSSettings">
+      <EntityTypeMapping TypeName="CPOSDBModel.SMSSetting">
+        <MappingFragment StoreEntitySet="SMSSetting">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="APIURL" ColumnName="APIURL" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stock_Store">
+      <EntityTypeMapping TypeName="CPOSDBModel.Stock_Store">
+        <MappingFragment StoreEntitySet="Stock_Store">
+          <ScalarProperty Name="St_ID" ColumnName="St_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stock_Store_Join">
+      <EntityTypeMapping TypeName="CPOSDBModel.Stock_Store_Join">
+        <MappingFragment StoreEntitySet="Stock_Store_Join">
+          <ScalarProperty Name="SSJ_ID" ColumnName="SSJ_ID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockTransfers">
+      <EntityTypeMapping TypeName="CPOSDBModel.StockTransfer">
+        <MappingFragment StoreEntitySet="StockTransfer">
+          <ScalarProperty Name="ST_ID" ColumnName="ST_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockTransfer_Join">
+      <EntityTypeMapping TypeName="CPOSDBModel.StockTransfer_Join">
+        <MappingFragment StoreEntitySet="StockTransfer_Join">
+          <ScalarProperty Name="STJ_ID" ColumnName="STJ_ID" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="CPOSDBModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TIN" ColumnName="TIN" />
+          <ScalarProperty Name="STNo" ColumnName="STNo" />
+          <ScalarProperty Name="CST" ColumnName="CST" />
+          <ScalarProperty Name="PAN" ColumnName="PAN" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="IFSCCode" ColumnName="IFSCCode" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="OpeningBalanceType" ColumnName="OpeningBalanceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierLedgerBooks">
+      <EntityTypeMapping TypeName="CPOSDBModel.SupplierLedgerBook">
+        <MappingFragment StoreEntitySet="SupplierLedgerBook">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LedgerNo" ColumnName="LedgerNo" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="PartyID" ColumnName="PartyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Temp_Stock">
+      <EntityTypeMapping TypeName="CPOSDBModel.Temp_Stock">
+        <MappingFragment StoreEntitySet="Temp_Stock">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="HasExpiryDate" ColumnName="HasExpiryDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Temp_Stock_RM">
+      <EntityTypeMapping TypeName="CPOSDBModel.Temp_Stock_RM">
+        <MappingFragment StoreEntitySet="Temp_Stock_RM">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Temp_Stock_Store">
+      <EntityTypeMapping TypeName="CPOSDBModel.Temp_Stock_Store">
+        <MappingFragment StoreEntitySet="Temp_Stock_Store">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempRestaurantPOS_OrderedProductKOT">
+      <EntityTypeMapping TypeName="CPOSDBModel.TempRestaurantPOS_OrderedProductKOT">
+        <MappingFragment StoreEntitySet="TempRestaurantPOS_OrderedProductKOT">
+          <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+          <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="VATPer" ColumnName="VATPer" />
+          <ScalarProperty Name="VATAmount" ColumnName="VATAmount" />
+          <ScalarProperty Name="STPer" ColumnName="STPer" />
+          <ScalarProperty Name="STAmount" ColumnName="STAmount" />
+          <ScalarProperty Name="SCPer" ColumnName="SCPer" />
+          <ScalarProperty Name="SCAmount" ColumnName="SCAmount" />
+          <ScalarProperty Name="DiscountPer" ColumnName="DiscountPer" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="T_Number" ColumnName="T_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempRestaurantPOS_OrderInfoKOT">
+      <EntityTypeMapping TypeName="CPOSDBModel.TempRestaurantPOS_OrderInfoKOT">
+        <MappingFragment StoreEntitySet="TempRestaurantPOS_OrderInfoKOT">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="TicketNote" ColumnName="TicketNote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vouchers">
+      <EntityTypeMapping TypeName="CPOSDBModel.Voucher">
+        <MappingFragment StoreEntitySet="Voucher">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voucher_OtherDetails">
+      <EntityTypeMapping TypeName="CPOSDBModel.Voucher_OtherDetails">
+        <MappingFragment StoreEntitySet="Voucher_OtherDetails">
+          <ScalarProperty Name="VD_ID" ColumnName="VD_ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wallets">
+      <EntityTypeMapping TypeName="CPOSDBModel.Wallet">
+        <MappingFragment StoreEntitySet="Wallet">
+          <ScalarProperty Name="WalletType" ColumnName="WalletType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouses">
+      <EntityTypeMapping TypeName="CPOSDBModel.Warehouse">
+        <MappingFragment StoreEntitySet="Warehouse">
+          <ScalarProperty Name="WarehouseName" ColumnName="WarehouseName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WarehouseTypes">
+      <EntityTypeMapping TypeName="CPOSDBModel.WarehouseType">
+        <MappingFragment StoreEntitySet="WarehouseType">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkPeriodEnds">
+      <EntityTypeMapping TypeName="CPOSDBModel.WorkPeriodEnd">
+        <MappingFragment StoreEntitySet="WorkPeriodEnd">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WPEnd" ColumnName="WPEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkPeriodStarts">
+      <EntityTypeMapping TypeName="CPOSDBModel.WorkPeriodStart">
+        <MappingFragment StoreEntitySet="WorkPeriodStart">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WPStart" ColumnName="WPStart" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Dish_Category" TypeName="CPOSDBModel.FK_Dish_Category" StoreEntitySet="Dish">
+      <EndProperty Name="Category">
+        <ScalarProperty Name="CategoryName" ColumnName="Category" />
+      </EndProperty>
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="DishName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Dish_Kitchen" TypeName="CPOSDBModel.FK_Dish_Kitchen" StoreEntitySet="Dish">
+      <EndProperty Name="Kitchen">
+        <ScalarProperty Name="Kitchenname" ColumnName="Kitchen" />
+      </EndProperty>
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="DishName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Recipe_Dish" TypeName="CPOSDBModel.FK_Recipe_Dish" StoreEntitySet="Recipe">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="Recipe">
+        <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillEB_Dish" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillEB_Dish" StoreEntitySet="RestaurantPOS_OrderedProductBillEB">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillEB">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillHD_Dish" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillHD_Dish" StoreEntitySet="RestaurantPOS_OrderedProductBillHD">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillHD">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillKOT_Dish" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillKOT_Dish" StoreEntitySet="RestaurantPOS_OrderedProductBillKOT">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillKOT">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillTA_Dish" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillTA_Dish" StoreEntitySet="RestaurantPOS_OrderedProductBillTA">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillTA">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductKOT_Dish" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductKOT_Dish" StoreEntitySet="RestaurantPOS_OrderedProductKOT">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductKOT">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Stock_Store_Join_Dish" TypeName="CPOSDBModel.FK_Stock_Store_Join_Dish" StoreEntitySet="Stock_Store_Join">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="Stock_Store_Join">
+        <ScalarProperty Name="SSJ_ID" ColumnName="SSJ_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_TempRestaurantPOS_OrderedProductKOT_Dish" TypeName="CPOSDBModel.FK_TempRestaurantPOS_OrderedProductKOT_Dish" StoreEntitySet="TempRestaurantPOS_OrderedProductKOT">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="TempRestaurantPOS_OrderedProductKOT">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_TempStock_Store_Dish" TypeName="CPOSDBModel.FK_TempStock_Store_Dish" StoreEntitySet="Temp_Stock_Store">
+      <EndProperty Name="Dish">
+        <ScalarProperty Name="DishName" ColumnName="Dish" />
+      </EndProperty>
+      <EndProperty Name="Temp_Stock_Store">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_BillingInfoHD_EmployeeRegistration" TypeName="CPOSDBModel.FK_RestaurantPOS_BillingInfoHD_EmployeeRegistration" StoreEntitySet="RestaurantPOS_BillingInfoHD">
+      <EndProperty Name="EmployeeRegistration">
+        <ScalarProperty Name="EmpId" ColumnName="Employee_ID" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_BillingInfoHD">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Expense_ExpenseType" TypeName="CPOSDBModel.FK_Expense_ExpenseType" StoreEntitySet="Expense">
+      <EndProperty Name="ExpenseType">
+        <ScalarProperty Name="Type" ColumnName="ExpenseType" />
+      </EndProperty>
+      <EndProperty Name="Expense">
+        <ScalarProperty Name="ExpenseName" ColumnName="ExpenseName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Voucher_OtherDetails_Expense" TypeName="CPOSDBModel.FK_Voucher_OtherDetails_Expense" StoreEntitySet="Voucher_OtherDetails">
+      <EndProperty Name="Expense">
+        <ScalarProperty Name="ExpenseName" ColumnName="Particulars" />
+      </EndProperty>
+      <EndProperty Name="Voucher_OtherDetails">
+        <ScalarProperty Name="VD_ID" ColumnName="VD_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_StockTransfer_Kitchen" TypeName="CPOSDBModel.FK_StockTransfer_Kitchen" StoreEntitySet="StockTransfer">
+      <EndProperty Name="Kitchen">
+        <ScalarProperty Name="Kitchenname" ColumnName="Kitchen" />
+      </EndProperty>
+      <EndProperty Name="StockTransfer">
+        <ScalarProperty Name="ST_ID" ColumnName="ST_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Logs_Registration" TypeName="CPOSDBModel.FK_Logs_Registration" StoreEntitySet="Logs">
+      <EndProperty Name="Registration">
+        <ScalarProperty Name="UserID" ColumnName="UserID" />
+      </EndProperty>
+      <EndProperty Name="Logs">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_MemberLedger_Member" TypeName="CPOSDBModel.FK_MemberLedger_Member" StoreEntitySet="MemberLedger">
+      <EndProperty Name="Member">
+        <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+      </EndProperty>
+      <EndProperty Name="MemberLedger">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="MemberID" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Payment_Supplier" TypeName="CPOSDBModel.FK_Payment_Supplier" StoreEntitySet="Payment">
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="ID" ColumnName="SupplierID" />
+      </EndProperty>
+      <EndProperty Name="Payment">
+        <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Product_OpeningStock_Product1" TypeName="CPOSDBModel.FK_Product_OpeningStock_Product1" StoreEntitySet="Product_OpeningStock">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="PID" ColumnName="ProductID" />
+      </EndProperty>
+      <EndProperty Name="Product_OpeningStock">
+        <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Purchase_Join_Product" TypeName="CPOSDBModel.FK_Purchase_Join_Product" StoreEntitySet="Purchase_Join">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="PID" ColumnName="ProductID" />
+      </EndProperty>
+      <EndProperty Name="Purchase_Join">
+        <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Recipe_Join_Product" TypeName="CPOSDBModel.FK_Recipe_Join_Product" StoreEntitySet="Recipe_Join">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="PID" ColumnName="ProductID" />
+      </EndProperty>
+      <EndProperty Name="Recipe_Join">
+        <ScalarProperty Name="RJ_ID" ColumnName="RJ_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_StockTransfer_Product" TypeName="CPOSDBModel.FK_StockTransfer_Product" StoreEntitySet="StockTransfer_Join">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="PID" ColumnName="ProductID" />
+      </EndProperty>
+      <EndProperty Name="StockTransfer_Join">
+        <ScalarProperty Name="STJ_ID" ColumnName="STJ_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Temp_Stock_Product" TypeName="CPOSDBModel.FK_Temp_Stock_Product" StoreEntitySet="Temp_Stock">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="PID" ColumnName="ProductID" />
+      </EndProperty>
+      <EndProperty Name="Temp_Stock">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Temp_Stock_RM_Product" TypeName="CPOSDBModel.FK_Temp_Stock_RM_Product" StoreEntitySet="Temp_Stock_RM">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="PID" ColumnName="ProductID" />
+      </EndProperty>
+      <EndProperty Name="Temp_Stock_RM">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Product_OpeningStock_Warehouse" TypeName="CPOSDBModel.FK_Product_OpeningStock_Warehouse" StoreEntitySet="Product_OpeningStock">
+      <EndProperty Name="Warehouse">
+        <ScalarProperty Name="WarehouseName" ColumnName="Warehouse" />
+      </EndProperty>
+      <EndProperty Name="Product_OpeningStock">
+        <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Purchase_Join_Purchase" TypeName="CPOSDBModel.FK_Purchase_Join_Purchase" StoreEntitySet="Purchase_Join">
+      <EndProperty Name="Purchase">
+        <ScalarProperty Name="ST_ID" ColumnName="PurchaseID" />
+      </EndProperty>
+      <EndProperty Name="Purchase_Join">
+        <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Purchase_Supplier" TypeName="CPOSDBModel.FK_Purchase_Supplier" StoreEntitySet="Purchase">
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="ID" ColumnName="Supplier_ID" />
+      </EndProperty>
+      <EndProperty Name="Purchase">
+        <ScalarProperty Name="ST_ID" ColumnName="ST_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Purchase_Join_Warehouse" TypeName="CPOSDBModel.FK_Purchase_Join_Warehouse" StoreEntitySet="Purchase_Join">
+      <EndProperty Name="Warehouse">
+        <ScalarProperty Name="WarehouseName" ColumnName="Warehouse" />
+      </EndProperty>
+      <EndProperty Name="Purchase_Join">
+        <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillKOT_R_Table" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillKOT_R_Table" StoreEntitySet="RestaurantPOS_OrderedProductBillKOT">
+      <EndProperty Name="R_Table">
+        <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillKOT">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderInfoKOT_R_Table" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderInfoKOT_R_Table" StoreEntitySet="RestaurantPOS_OrderInfoKOT">
+      <EndProperty Name="R_Table">
+        <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderInfoKOT">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_TempRestaurantPOS_OrderInfoKOT_R_Table" TypeName="CPOSDBModel.FK_TempRestaurantPOS_OrderInfoKOT_R_Table" StoreEntitySet="TempRestaurantPOS_OrderInfoKOT">
+      <EndProperty Name="R_Table">
+        <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+      </EndProperty>
+      <EndProperty Name="TempRestaurantPOS_OrderInfoKOT">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Recipe_Join_Recipe" TypeName="CPOSDBModel.FK_Recipe_Join_Recipe" StoreEntitySet="Recipe_Join">
+      <EndProperty Name="Recipe">
+        <ScalarProperty Name="R_ID" ColumnName="RecipeID" />
+      </EndProperty>
+      <EndProperty Name="Recipe_Join">
+        <ScalarProperty Name="RJ_ID" ColumnName="RJ_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_BillingInfoEB_Registration" TypeName="CPOSDBModel.FK_RestaurantPOS_BillingInfoEB_Registration" StoreEntitySet="RestaurantPOS_BillingInfoEB">
+      <EndProperty Name="Registration">
+        <ScalarProperty Name="UserID" ColumnName="Operator" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_BillingInfoEB">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_BillingInfoHD_Registration" TypeName="CPOSDBModel.FK_RestaurantPOS_BillingInfoHD_Registration" StoreEntitySet="RestaurantPOS_BillingInfoHD">
+      <EndProperty Name="Registration">
+        <ScalarProperty Name="UserID" ColumnName="Operator" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_BillingInfoHD">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_BillingInfoKOT_Registration" TypeName="CPOSDBModel.FK_RestaurantPOS_BillingInfoKOT_Registration" StoreEntitySet="RestaurantPOS_BillingInfoKOT">
+      <EndProperty Name="Registration">
+        <ScalarProperty Name="UserID" ColumnName="Operator" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_BillingInfoKOT">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_BillingInfoTA_Registration" TypeName="CPOSDBModel.FK_RestaurantPOS_BillingInfoTA_Registration" StoreEntitySet="RestaurantPOS_BillingInfoTA">
+      <EndProperty Name="Registration">
+        <ScalarProperty Name="UserID" ColumnName="Operator" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_BillingInfoTA">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderInfoKOT_Registration" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderInfoKOT_Registration" StoreEntitySet="RestaurantPOS_OrderInfoKOT">
+      <EndProperty Name="Registration">
+        <ScalarProperty Name="UserID" ColumnName="Operator" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderInfoKOT">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_TempRestaurantPOS_OrderInfoKOT_Registration" TypeName="CPOSDBModel.FK_TempRestaurantPOS_OrderInfoKOT_Registration" StoreEntitySet="TempRestaurantPOS_OrderInfoKOT">
+      <EndProperty Name="Registration">
+        <ScalarProperty Name="UserID" ColumnName="Operator" />
+      </EndProperty>
+      <EndProperty Name="TempRestaurantPOS_OrderInfoKOT">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillEB_RestaurantPOS_BillingInfoEB" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillEB_RestaurantPOS_BillingInfoEB" StoreEntitySet="RestaurantPOS_OrderedProductBillEB">
+      <EndProperty Name="RestaurantPOS_BillingInfoEB">
+        <ScalarProperty Name="Id" ColumnName="BillID" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillEB">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillHD_RestaurantPOS_BillingInfoHD" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillHD_RestaurantPOS_BillingInfoHD" StoreEntitySet="RestaurantPOS_OrderedProductBillHD">
+      <EndProperty Name="RestaurantPOS_BillingInfoHD">
+        <ScalarProperty Name="Id" ColumnName="BillID" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillHD">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillKOT_TempRestaurantPOS_OrderInfoKOT" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillKOT_TempRestaurantPOS_OrderInfoKOT" StoreEntitySet="RestaurantPOS_OrderedProductBillKOT">
+      <EndProperty Name="RestaurantPOS_BillingInfoKOT">
+        <ScalarProperty Name="Id" ColumnName="BillID" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillKOT">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_RestaurantPOS_OrderedProductBillTA_RestaurantPOS_BillingInfoTA" TypeName="CPOSDBModel.FK_RestaurantPOS_OrderedProductBillTA_RestaurantPOS_BillingInfoTA" StoreEntitySet="RestaurantPOS_OrderedProductBillTA">
+      <EndProperty Name="RestaurantPOS_BillingInfoTA">
+        <ScalarProperty Name="Id" ColumnName="BillID" />
+      </EndProperty>
+      <EndProperty Name="RestaurantPOS_OrderedProductBillTA">
+        <ScalarProperty Name="OP_ID" ColumnName="OP_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Stock_Store_Join_Stock_Store" TypeName="CPOSDBModel.FK_Stock_Store_Join_Stock_Store" StoreEntitySet="Stock_Store_Join">
+      <EndProperty Name="Stock_Store">
+        <ScalarProperty Name="St_ID" ColumnName="StockID" />
+      </EndProperty>
+      <EndProperty Name="Stock_Store_Join">
+        <ScalarProperty Name="SSJ_ID" ColumnName="SSJ_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_StockTransfer_Join_StockTransfer" TypeName="CPOSDBModel.FK_StockTransfer_Join_StockTransfer" StoreEntitySet="StockTransfer_Join">
+      <EndProperty Name="StockTransfer">
+        <ScalarProperty Name="ST_ID" ColumnName="StockTransferID" />
+      </EndProperty>
+      <EndProperty Name="StockTransfer_Join">
+        <ScalarProperty Name="STJ_ID" ColumnName="STJ_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_StockTransfer_Warehouse" TypeName="CPOSDBModel.FK_StockTransfer_Warehouse" StoreEntitySet="StockTransfer_Join">
+      <EndProperty Name="Warehouse">
+        <ScalarProperty Name="WarehouseName" ColumnName="Warehouse" />
+      </EndProperty>
+      <EndProperty Name="StockTransfer_Join">
+        <ScalarProperty Name="STJ_ID" ColumnName="STJ_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Temp_Stock_Warehouse" TypeName="CPOSDBModel.FK_Temp_Stock_Warehouse" StoreEntitySet="Temp_Stock">
+      <EndProperty Name="Warehouse">
+        <ScalarProperty Name="WarehouseName" ColumnName="Warehouse" />
+      </EndProperty>
+      <EndProperty Name="Temp_Stock">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Voucher_OtherDetails_Voucher" TypeName="CPOSDBModel.FK_Voucher_OtherDetails_Voucher" StoreEntitySet="Voucher_OtherDetails">
+      <EndProperty Name="Voucher">
+        <ScalarProperty Name="ID" ColumnName="VoucherID" />
+      </EndProperty>
+      <EndProperty Name="Voucher_OtherDetails">
+        <ScalarProperty Name="VD_ID" ColumnName="VD_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Warehouse_WarehouseType" TypeName="CPOSDBModel.FK_Warehouse_WarehouseType" StoreEntitySet="Warehouse">
+      <EndProperty Name="WarehouseType">
+        <ScalarProperty Name="Type" ColumnName="WarehouseType" />
+      </EndProperty>
+      <EndProperty Name="Warehouse">
+        <ScalarProperty Name="WarehouseName" ColumnName="WarehouseName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="insertandupdateOrderedProductKOT" FunctionName="CPOSDBModel.Store.insertandupdateOrderedProductKOT" />
+    <FunctionImportMapping FunctionImportName="insertandupdateOrderedProductKOTTemp" FunctionName="CPOSDBModel.Store.insertandupdateOrderedProductKOTTemp" />
+    <FunctionImportMapping FunctionImportName="InsertDailyCustomer" FunctionName="CPOSDBModel.Store.InsertDailyCustomer" />
+    <FunctionImportMapping FunctionImportName="SpInsertUpdateGrandTotal" FunctionName="CPOSDBModel.Store.SpInsertUpdateGrandTotal" />
+    <FunctionImportMapping FunctionImportName="SpInsertUpdateGrandTotalTemp" FunctionName="CPOSDBModel.Store.SpInsertUpdateGrandTotalTemp" />
+  </EntityContainerMapping>
+</Mapping>
